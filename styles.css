@@ -196,11 +196,11 @@ body {
 
 .mobile-menu .owner-name {
   font-family: var(--font-heading);
-  font-size: 1rem;
-  color: #1a1a1a;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+  color: #003202f6;
+  margin-bottom: 1.6rem;
+  font-weight: 400;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-menu-divider {
@@ -454,26 +454,26 @@ body {
    ============================================================ */
 .hero-contact-btn {
   position: absolute;
-  bottom: 17rem;
+  top: 2rem;
   right: 1rem;
-  background: var(--color-chocolate);
+  background: rgba(20, 121, 82, 0.42);
   color: var(--color-text-white);
-  padding: 0.7rem 1.2rem;
-  border-radius: 35px;
+  padding: 0.3rem 0.4rem;
+  border-radius: 20px;
   text-decoration: none;
   font-family: var(--font-heading);
-  font-weight: 200;
-  font-size: 0.7rem;
+  font-weight: 300;
+  font-size: 0.6rem;
   border: 1px solid var(--color-gold);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transition: var(--transition-smooth);
   z-index: 4;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
 .hero-contact-btn:hover {
-  background: var(--color-chocolate-solid);
-  transform: translateY(-3px) scale(1.05);
+  background:  rgba(60, 136, 107, 0.7);
+  transform: translateY(-3px) scale(1.01);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
 }
 
@@ -691,7 +691,7 @@ body {
    Instagram Section
    ============================================================ */
 .instagram-section {
-  background: var(--color-primary-dark);
+  background:  rgba(44, 21, 1, 0.891);
   padding: 3rem 0;
   overflow: hidden;
   position: relative;
@@ -729,19 +729,19 @@ body {
   content: '';
   position: absolute;
   top: 0;
-  width: 80px;
+  width: 75px;
   height: 100%;
   z-index: 2;
 }
 
 .marquee-container::before {
   left: 0;
-  background: linear-gradient(to right, var(--color-primary-dark), transparent);
+  background: linear-gradient(to right, rgba(44, 21, 1, 0.891), transparent);
 }
 
 .marquee-container::after {
   right: 0;
-  background: linear-gradient(to left, var(--color-primary-dark), transparent);
+  background: linear-gradient(to left, rgba(44, 21, 1, 0.891), transparent);
 }
 
 .marquee-track {
@@ -758,16 +758,16 @@ body {
 .marquee-item {
   flex-shrink: 0;
   width: 200px;
-  height: 200px;
+  height: 250px;
   border-radius: 12px;
   overflow: hidden;
-  border: 3px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   transition: var(--transition-smooth);
 }
 
 .marquee-item:hover {
   border-color: var(--color-instagram-btn);
-  transform: scale(1.05);
+  transform: scale(1.09);
 }
 
 .marquee-item img {
@@ -790,23 +790,23 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: var(--color-instagram-btn);
-  color: white;
+  background:  rgba(51, 217, 181, 0.814);
+  color: rgb(37, 37, 37);
   padding: 0.8rem 2rem;
   border-radius: 30px;
   text-decoration: none;
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1rem;
   margin-top: 2rem;
   transition: var(--transition-smooth);
-  box-shadow: 0 4px 15px rgba(13, 202, 141, 0.3);
+  box-shadow: 0 4px 15px rgba(61, 143, 117, 0.724);
 }
 
 .instagram-follow-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(13, 202, 141, 0.4);
-  background: #0bb87f;
+  background: #0ba16fee;
 }
 
 /* ============================================================
@@ -1011,6 +1011,48 @@ body {
     width: 220px;
     height: 220px;
   }
+
+  .hero-contact-btn {
+    display: none; /* Hide Contact button next to title on desktop */
+  }
+
+  .whatsapp-tooltip {
+    display: block;
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%) translateX(10px);
+    background: rgba(37, 211, 102, 0.85); /* Semi-transparent light green */
+    color: #ffffff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+  }
+
+  .whatsapp-tooltip::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 6px 0 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgba(37, 211, 102, 0.85);
+  }
+
+  .whatsapp-btn:hover .whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+  }
 }
 
 /* ============================================================
@@ -1138,5 +1180,15 @@ button:focus-visible {
 
   .cards-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   Mobile layout overrides for specific grids (Cursos y Mesas)
+   ============================================================ */
+@media (max-width: 768px) {
+  #cursos .cards-grid,
+  #mesas .cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
