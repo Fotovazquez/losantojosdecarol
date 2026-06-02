@@ -1,0 +1,1142 @@
+/* ============================================================
+   Los Antojitos de Carol — Premium Stylesheet
+   Mobile-First | Elegant Luxury Design
+   ============================================================ */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap');
+
+/* ============================================================
+   CSS Custom Properties
+   ============================================================ */
+:root {
+  --color-primary: #6db59e;
+  --color-primary-dark: #063d2c;
+  --color-section-pink: #e2bed9;
+  --color-section-gold: #feebc2;
+  --color-gold: #c9a84c;
+  --color-gold-light: #e8d48b;
+  --color-silver: #b8b8b8;
+  --color-chocolate: rgba(62, 28, 10, 0.85);
+  --color-chocolate-solid: #3e1c0a;
+  --color-text-white: #e0e0e0;
+  --color-bg-pastel: #fdf6f0;
+  --color-bg-pastel-alt: #faf0f7;
+  --color-instagram-btn: #0dca8d;
+  --font-heading: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Lato', 'Cormorant Garamond', sans-serif;
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ============================================================
+   Reset & Base
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg-pastel);
+  color: #2d2d2d;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   Navigation Header
+   ============================================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(109, 181, 158, 0.91); /* More translucent */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.7rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+  transition: var(--transition-smooth);
+}
+
+.navbar-logo {
+  height: 50px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.nav-links {
+  display: none;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--color-gold);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--color-chocolate-solid);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ============================================================
+   Mobile Menu Toggle (Hamburger)
+   ============================================================ */
+.menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1100;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #1a1a1a;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: var(--transition-smooth);
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -8px);
+}
+
+/* ============================================================
+   Mobile Menu (Full-Screen Overlay)
+   ============================================================ */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--color-primary);
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+  overflow-y: auto;
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-close svg {
+  fill: #000000;
+}
+
+.mobile-menu .mobile-logo {
+  width: 100px; /* Increased mobile logo size */
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+}
+
+.mobile-menu .owner-name {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu-divider {
+  width: 80px;
+  height: 1px;
+  background: rgba(26, 26, 26, 0.2);
+  margin: 1.5rem auto;
+}
+
+.mobile-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.mobile-contact-item {
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-weight: 500;
+}
+
+.mobile-contact-item a {
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.mobile-contact-item a:hover {
+  color: var(--color-chocolate-solid);
+}
+
+.mobile-menu .mobile-nav-links {
+  list-style: none;
+  text-align: center;
+  width: 100%;
+}
+
+.mobile-menu .mobile-nav-links li {
+  margin: 0.8rem 0;
+}
+
+.mobile-menu .mobile-nav-links a {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mobile-menu .mobile-nav-links a:hover {
+  color: var(--color-chocolate-solid);
+}
+
+.mobile-menu .mobile-address {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #2a2a2a;
+  text-align: center;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+/* ============================================================
+   Hero Section
+   ============================================================ */
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 66px;
+}
+
+.hero-video-container {
+  position: relative;
+  width: 100%;
+  height: 50vh; /* Mobile: half screen height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.35) 40%,
+    rgba(0, 0, 0, 0.1) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  z-index: 3;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  color: var(--color-text-white);
+  font-size: clamp(2.1rem, 5.5vw, 3.5rem);
+  font-weight: 700;
+  text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.7);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.title-highlight {
+  font-weight: 400;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.title-accent {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 800;
+  font-style: italic;
+  color: var(--color-gold-light);
+  text-shadow: 2px 4px 15px rgba(201, 168, 76, 0.4);
+}
+
+.title-accent-alt {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 800;
+  font-style: italic;
+  color: #ffffff;
+  border-bottom: 2px double var(--color-gold);
+}
+
+.hero-signature-wrap {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  background: rgba(30, 196, 154, 0.254);
+  padding: 0.3rem 1.1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(214, 170, 50, 0.599);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.hero-signature {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  color: var(--color-text-white);
+  margin: 0;
+  font-style: italic;
+  line-height: 1;
+}
+
+.signature-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--color-gold-light);
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 8px rgba(232, 212, 139, 0.6);
+}
+
+/* ============================================================
+   Tags — Chocolate Bonbon Style
+   ============================================================ */
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-self: flex-start;
+  margin-top: auto;
+  margin-bottom: 0.3rem;
+}
+
+.tag {
+  background: var(--color-chocolate);
+  color: var(--color-text-white);
+  padding: 0.2rem 1rem;
+  border-radius: 15px;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid var(--color-gold);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  cursor: default;
+  transition: var(--transition-smooth);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.tag::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 30%;
+  height: 25%;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.25), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.tag:hover {
+  background: rgba(62, 28, 10, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================================
+   Hero Contact Button
+   ============================================================ */
+.hero-contact-btn {
+  position: absolute;
+  bottom: 17rem;
+  right: 1rem;
+  background: var(--color-chocolate);
+  color: var(--color-text-white);
+  padding: 0.7rem 1.2rem;
+  border-radius: 35px;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 200;
+  font-size: 0.7rem;
+  border: 1px solid var(--color-gold);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: var(--transition-smooth);
+  z-index: 4;
+  letter-spacing: 3px;
+}
+
+.hero-contact-btn:hover {
+  background: var(--color-chocolate-solid);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================================
+   Section Titles
+   ============================================================ */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  text-align: center;
+  color: var(--color-chocolate-solid);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, var(--color-gold), var(--color-gold-light), var(--color-gold));
+  margin: 0.8rem auto 0;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+/* ============================================================
+   Section Divider — Gold Separator
+   ============================================================ */
+.section-divider {
+  height: 4px;
+  background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+/* Subtle pastel section divider */
+.pastel-divider {
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-section-pink),
+    var(--color-section-gold),
+    var(--color-section-pink),
+    transparent
+  );
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+/* ============================================================
+   Services Section
+   ============================================================ */
+.services-section {
+  padding: 4rem 1.5rem;
+  background: var(--color-bg-pastel);
+}
+
+.category-description {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2.5rem; /* Spacing below texts to separate from card images */
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: #555555;
+  line-height: 1.6;
+  padding: 0 1.5rem;
+}
+
+/* Polka Dot Background Pattern */
+.polka-bg {
+  position: relative;
+}
+
+.polka-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, var(--color-section-pink) 12px, transparent 12px);
+  background-size: 60px 60px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================================
+   Service Category
+   ============================================================ */
+.service-category {
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.category-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-chocolate-solid);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.category-title::before,
+.category-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+  max-width: 100px;
+}
+
+/* ============================================================
+   Service Cards Grid
+   ============================================================ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   Service Card
+   ============================================================ */
+.service-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  aspect-ratio: 4 / 5;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.service-card img.active {
+  opacity: 1;
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(62, 28, 10, 0.95) 0%, rgba(62, 28, 10, 0.65) 60%, transparent 100%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 50%;
+  transition: var(--transition-smooth);
+}
+
+.service-card:hover .card-content {
+  min-height: 55%;
+  background: linear-gradient(to top, rgba(62, 28, 10, 1) 0%, rgba(62, 28, 10, 0.75) 70%, transparent 100%);
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  color: var(--color-gold-light);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.card-desc {
+  color: var(--color-text-white);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  opacity: 0.95;
+  text-align: center;
+}
+
+/* ============================================================
+   Instagram Section
+   ============================================================ */
+.instagram-section {
+  background: var(--color-primary-dark);
+  padding: 3rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.instagram-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0 1.5rem;
+}
+
+.instagram-header h2 {
+  font-family: var(--font-heading);
+  color: var(--color-text-white);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin-bottom: 0.5rem;
+}
+
+.instagram-header p {
+  color: rgba(224, 224, 224, 0.8);
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   Marquee — Infinite Scroll Gallery
+   ============================================================ */
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-container::before,
+.marquee-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+}
+
+.marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-primary-dark), transparent);
+}
+
+.marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-primary-dark), transparent);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 1rem;
+  animation: marquee 25s linear infinite;
+  width: max-content;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  transition: var(--transition-smooth);
+}
+
+.marquee-item:hover {
+  border-color: var(--color-instagram-btn);
+  transform: scale(1.05);
+}
+
+.marquee-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Instagram Follow Button */
+.instagram-follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--color-instagram-btn);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 2rem;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 15px rgba(13, 202, 141, 0.3);
+}
+
+.instagram-follow-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(13, 202, 141, 0.4);
+  background: #0bb87f;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.footer {
+  background: #1a1a1a;
+  color: var(--color-text-white);
+  padding: 3rem 1.5rem 1.5rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.footer-section h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: #6db59e; /* Theme color for footers titles */
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer svg,
+.footer-section svg {
+  fill: #6db59e !important; /* Theme color for footers icons */
+}
+
+.footer-section p,
+.footer-section a {
+  color: var(--color-text-white);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: var(--color-gold);
+}
+
+.footer-map {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  margin-top: 0.5rem;
+}
+
+.footer-logo {
+  display: block;
+  margin: 1.5rem auto 0;
+  max-width: 130px;
+  height: auto;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* ============================================================
+   WhatsApp Floating Button
+   ============================================================ */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-btn svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
+
+/* ============================================================
+   Back to Top Button
+   ============================================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 6.5rem; /* Increased to separate from WhatsApp button */
+  right: 1.7rem;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(201, 168, 76, 0.4);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-smooth);
+  color: white;
+  font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.5);
+}
+
+/* ============================================================
+   Responsive — Tablet & Desktop (769px+)
+   ============================================================ */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .navbar {
+    padding: 1.2rem 2.5rem;
+  }
+
+  .navbar-logo {
+    height: 70px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .hero {
+    margin-top: 98px;
+  }
+
+  .hero-video-container {
+    height: 600px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    justify-content: center;
+  }
+
+  .cards-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+  }
+
+  .cards-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 960px;
+  }
+
+  .cards-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 640px;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .marquee-item {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* ============================================================
+   Responsive — Large Desktop (1024px+)
+   ============================================================ */
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 1.4rem 4rem;
+  }
+
+  .navbar-logo {
+    height: 70px;
+  }
+
+  .nav-links a {
+    font-size: 1.25rem;
+  }
+
+  .hero {
+    margin-top: 114px;
+  }
+
+  .hero-title {
+    font-size: 4.2rem;
+  }
+}
+
+/* ============================================================
+   Hero Subtitle Text
+   ============================================================ */
+.hero-subtitle-text {
+  display: block;
+  font-size: 0.75em;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-gold-light);
+  text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+  margin-top: 0.3rem;
+  letter-spacing: 2px;
+}
+
+/* ============================================================
+   Section Header Spacing
+   ============================================================ */
+.section-header {
+  margin-bottom: 3rem;
+  padding-top: 1rem;
+}
+
+/* ============================================================
+   Scroll Animations — Fade In
+   ============================================================ */
+.animate-target {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-target.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   Section Divider Extra Spacing
+   ============================================================ */
+.section-divider {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ============================================================
+   Polka Dot Background — Alternate Pink Section (Yellow tone removed)
+   ============================================================ */
+.services-section {
+  background: linear-gradient(
+    180deg,
+    var(--color-bg-pastel) 0%,
+    var(--color-bg-pastel-alt) 50%,
+    var(--color-bg-pastel) 100%
+  );
+}
+
+/* ============================================================
+   Navbar Brand Link
+   ============================================================ */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* ============================================================
+   Accessibility — Focus States
+   ============================================================ */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   Extra Small Screens (< 400px)
+   ============================================================ */
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 1.2rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.9rem;
+  }
+
+  .hero-contact-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .marquee-item {
+    width: 150px;
+    height: 150px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

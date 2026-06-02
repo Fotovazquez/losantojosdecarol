@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Los Antojos de Carol - Pastelería artesanal de Ana Albi. Tartas personalizadas, pasteles, mesas dulces y cursos de repostería en Mairena del Aljarafe, Sevilla.">
+    <meta name="keywords" content="pastelería, tartas, pasteles, mesas dulces, cursos repostería, Mairena del Aljarafe, Sevilla, Ana Albi">
+    <meta name="author" content="Ana Albi - Los Antojos de Carol">
+    <title>Los Antojos de Carol | Pastelería Artesanal - Ana Albi</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="img/logo.png">
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- NAVIGATION -->
+    <!-- ============================================ -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="navbar-brand">
+            <img src="img/logo.png" alt="Los Antojos de Carol - Logo" class="navbar-logo">
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#tartas">Tartas</a></li>
+            <li><a href="#pasteles">Pasteles</a></li>
+            <li><a href="#mesas">Mesas</a></li>
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#instagram">Instagram</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- MOBILE MENU -->
+    <!-- ============================================ -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Cerrar menú">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="#1a1a1a"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+        <img src="img/logo.png" alt="Los Antojos de Carol" class="mobile-logo">
+        <span class="owner-name">Ana Albi</span>
+        <ul class="mobile-nav-links">
+            <li><a href="#tartas" onclick="closeMobileMenu()">Tartas</a></li>
+            <li><a href="#mesas" onclick="closeMobileMenu()">Mesas</a></li>
+            <li>
+                <a href="https://www.instagram.com/losantojosdecarol" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    Instagram
+                </a>
+            </li>
+        </ul>
+        <div class="mobile-menu-divider"></div>
+        <div class="mobile-contact-info">
+            <div class="mobile-contact-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <a href="mailto:losantojosdecarol@gmail.com">losantojosdecarol@gmail.com</a>
+            </div>
+            <div class="mobile-contact-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>C/ Juan Sebastian Elcano Local 2A, Mairena Del Aljarafe</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- HERO SECTION -->
+    <!-- ============================================ -->
+    <section class="hero" id="hero">
+        <div class="hero-video-container">
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata" id="heroVideo">
+                <source src="video.mp4" type="video/mp4">
+                Tu navegador no soporta vídeo HTML5.
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-highlight">Los</span> <span class="title-accent">Antojos</span> 
+                        <span class="title-highlight">de</span> <span class="title-accent-alt">Carol</span>
+                        <span class="hero-subtitle-text">~ Dulces con encanto ~</span>
+                    </h1>
+                    <div class="hero-signature-wrap">
+                        <p class="hero-signature">Por <span class="signature-name">Ana Albi</span></p>
+                    </div>
+                </div>
+                <div class="hero-bottom-row">
+                    <div class="hero-tags">
+                        <span class="tag">Dulces</span>
+                        <span class="tag">Productos artesanos</span>
+                        <span class="tag">Cocina salada</span>
+                    </div>
+                    <a href="#contacto" class="hero-contact-btn">CONTACTO</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SERVICES SECTION -->
+    <!-- ============================================ -->
+    <section class="services-section polka-bg" id="servicios">
+
+        <div class="section-header">
+            <h2 class="section-title">Nuestras Especialidades</h2>
+            <p class="section-subtitle">Hechos con amor, cuidando cada detalle</p>
+        </div>
+
+        <!-- Tartas -->
+        <div class="service-category" id="tartas">
+            <h3 class="category-title">Tartas Personalizadas</h3>
+            <p class="category-description">Cada tarta es una obra de arte única, diseñada especialmente para tu celebración. Desde bodas hasta cumpleaños, creamos tartas que cuentan tu historia.</p>
+            <div class="cards-grid cards-grid-4">
+                <div class="service-card">
+                    <div class="card-image-slider">
+                        <img src="img/tarrtas1.webp" alt="Tarta artesanal decorada" class="active">
+                        <img src="img/tarrtas2.webp" alt="Tarta de celebración">
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Tartas de Celebración</h4>
+                        <p class="card-desc">Diseños exclusivos para bodas, bautizos, comuniones y eventos especiales.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-image-slider">
+                        <img src="img/tarrtas2.webp" alt="Tarta temática" class="active">
+                        <img src="img/tarrtas3.webp" alt="Tarta personalizada">
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Tartas Temáticas</h4>
+                        <p class="card-desc">Creaciones personalizadas con la temática que sueñes. Cada detalle cuenta.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-image-slider">
+                        <img src="img/tarrtas3.webp" alt="Tarta fondant" class="active">
+                        <img src="img/tartas4.webp" alt="Tarta elegante">
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Tartas con Fondant</h4>
+                        <p class="card-desc">Acabados impecables con fondant artístico y decoración comestible premium.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-image-slider">
+                        <img src="img/tartas4.webp" alt="Tarta de varios pisos" class="active">
+                        <img src="img/tarrtas1.webp" alt="Tarta premium">
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Tartas de Pisos</h4>
+                        <p class="card-desc">Espectaculares tartas de varios pisos para los momentos más memorables.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Pasteles -->
+        <div class="service-category" id="pasteles">
+            <h3 class="category-title">Pasteles Artesanos</h3>
+            <p class="category-description">Recetas tradicionales con un toque moderno. Elaborados con ingredientes de primera calidad y mucho cariño en cada bocado.</p>
+            <div class="cards-grid cards-grid-3">
+                <div class="service-card">
+                    <div class="card-image-slider">
+                        <img src="img/pastel1.webp" alt="Pastel clásico" class="active">
+                        <img src="img/pastel2.webp" alt="Pastel artesano">
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Pasteles Clásicos</h4>
+                        <p class="card-desc">Los sabores de siempre con la calidad artesanal que nos caracteriza.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-image-slider">
+                        <img src="img/pastel2.webp" alt="Pastel gourmet" class="active">
+                        <img src="img/pastel3.webp" alt="Pastel especial">
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Pasteles Gourmet</h4>
+                        <p class="card-desc">Creaciones exclusivas con combinaciones de sabores innovadores y sofisticados.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-image-slider">
+                        <img src="img/pastel3.webp" alt="Pastel de temporada" class="active">
+                        <img src="img/pastel1.webp" alt="Pastel fresco">
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Pasteles de Temporada</h4>
+                        <p class="card-desc">Frutas frescas de temporada y sabores que cambian con cada estación del año.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Mesas -->
+        <div class="service-category" id="mesas">
+            <h3 class="category-title">Mesas Dulces &amp; Saladas</h3>
+            <p class="category-description">Montajes espectaculares para tus eventos. Cuidamos cada detalle de la decoración y la presentación para crear experiencias inolvidables.</p>
+            <div class="cards-grid cards-grid-4">
+                <div class="service-card">
+                    <div class="card-image-slider">
+                        <img src="img/mesa1.webp" alt="Mesa dulce elegante" class="active">
+                        <img src="img/mesa2.webp" alt="Mesa para evento">
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Mesas para Bodas</h4>
+                        <p class="card-desc">Montajes elegantes y románticos que complementan tu gran día.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-image-slider">
+                        <img src="img/mesa2.webp" alt="Mesa temática" class="active">
+                        <img src="img/mesa3.webp" alt="Mesa decorada">
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Mesas Temáticas</h4>
+                        <p class="card-desc">Diseños personalizados que se adaptan a cualquier estilo y celebración.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-image-slider">
+                        <img src="img/mesa3.webp" alt="Candy bar" class="active">
+                        <img src="img/mesa4.webp" alt="Mesa de dulces">
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Candy Bar</h4>
+                        <p class="card-desc">Rincones dulces irresistibles con variedad de golosinas y productos artesanos.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-image-slider">
+                        <img src="img/mesa4.webp" alt="Mesa completa" class="active">
+                        <img src="img/mesa1.webp" alt="Mesa premium">
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Eventos Corporativos</h4>
+                        <p class="card-desc">Presentaciones profesionales que impresionan en cualquier evento empresarial.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Cursos y Talleres -->
+        <div class="service-category" id="cursos">
+            <h3 class="category-title">Cursos y Talleres</h3>
+            <p class="category-description">Aprende los secretos de la repostería creativa en nuestros talleres prácticos. Para todos los niveles, desde principiantes hasta avanzados.</p>
+            <div class="cards-grid cards-grid-2">
+                <div class="service-card">
+                    <div class="card-image-slider">
+                        <img src="img/taller1.webp" alt="Taller de repostería" class="active">
+                        <img src="img/taller2.webp" alt="Curso de decoración">
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Talleres Grupales</h4>
+                        <p class="card-desc">Clases prácticas en grupo donde aprenderás técnicas profesionales de decoración y modelado.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-image-slider">
+                        <img src="img/taller2.webp" alt="Masterclass" class="active">
+                        <img src="img/taller1.webp" alt="Taller personalizado">
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Masterclass Privadas</h4>
+                        <p class="card-desc">Sesiones personalizadas para perfeccionar tu técnica con atención individual y exclusiva.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ============================================ -->
+    <!-- INSTAGRAM SECTION -->
+    <!-- ============================================ -->
+    <section class="instagram-section" id="instagram">
+        <div class="instagram-header">
+            <h2>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="#e0e0e0" style="vertical-align: middle; margin-right: 8px;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                Síguenos en Instagram
+            </h2>
+            <p>@losantojosdecarol</p>
+        </div>
+
+        <div class="marquee-container">
+            <div class="marquee-track" id="marqueeTrack">
+                <!-- Original set -->
+                <div class="marquee-item"><img src="img/ig1.webp" alt="Instagram 1" loading="lazy"></div>
+                <div class="marquee-item"><img src="img/ig2.webp" alt="Instagram 2" loading="lazy"></div>
+                <div class="marquee-item"><img src="img/ig3.webp" alt="Instagram 3" loading="lazy"></div>
+                <div class="marquee-item"><img src="img/ig4.webp" alt="Instagram 4" loading="lazy"></div>
+                <div class="marquee-item"><img src="img/ig5.webp" alt="Instagram 5" loading="lazy"></div>
+                <div class="marquee-item"><img src="img/ig6.webp" alt="Instagram 6" loading="lazy"></div>
+                <div class="marquee-item"><img src="img/ig7.webp" alt="Instagram 7" loading="lazy"></div>
+                <div class="marquee-item"><img src="img/ig8.webp" alt="Instagram 8" loading="lazy"></div>
+                <div class="marquee-item"><img src="img/ig9.webp" alt="Instagram 9" loading="lazy"></div>
+                <div class="marquee-item"><img src="img/ig10.webp" alt="Instagram 10" loading="lazy"></div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="marquee-item"><img src="img/ig1.webp" alt="Instagram 1" loading="lazy"></div>
+                <div class="marquee-item"><img src="img/ig2.webp" alt="Instagram 2" loading="lazy"></div>
+                <div class="marquee-item"><img src="img/ig3.webp" alt="Instagram 3" loading="lazy"></div>
+                <div class="marquee-item"><img src="img/ig4.webp" alt="Instagram 4" loading="lazy"></div>
+                <div class="marquee-item"><img src="img/ig5.webp" alt="Instagram 5" loading="lazy"></div>
+                <div class="marquee-item"><img src="img/ig6.webp" alt="Instagram 6" loading="lazy"></div>
+                <div class="marquee-item"><img src="img/ig7.webp" alt="Instagram 7" loading="lazy"></div>
+                <div class="marquee-item"><img src="img/ig8.webp" alt="Instagram 8" loading="lazy"></div>
+                <div class="marquee-item"><img src="img/ig9.webp" alt="Instagram 9" loading="lazy"></div>
+                <div class="marquee-item"><img src="img/ig10.webp" alt="Instagram 10" loading="lazy"></div>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="https://www.instagram.com/losantojosdecarol" target="_blank" rel="noopener noreferrer" class="instagram-follow-btn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                Seguir en Instagram
+            </a>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER / CONTACT -->
+    <!-- ============================================ -->
+    <footer class="footer" id="contacto">
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <h3>Los Antojos de Carol</h3>
+                <p style="margin-bottom: 0.5rem;">Pastelería artesanal de <strong>Ana Albi</strong></p>
+                <p>Elaboramos con amor tartas, pasteles y dulces personalizados para hacer de tus momentos algo inolvidable.</p>
+                <img src="img/logo.png" alt="Los Antojos de Carol" class="footer-logo">
+            </div>
+
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#c9a84c" style="vertical-align: middle; margin-right: 6px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    C/ Juan Sebastian Elcano Local 2A,<br>
+                    <span style="margin-left: 22px;">Mairena Del Aljarafe, Andalucía</span><br>
+                    <span style="margin-left: 22px;">España 41927</span>
+                </p>
+                <p style="margin-top: 0.8rem;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#c9a84c" style="vertical-align: middle; margin-right: 6px;"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <a href="mailto:losantojosdecarol@gmail.com">losantojosdecarol@gmail.com</a>
+                </p>
+                <p style="margin-top: 0.8rem;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#c9a84c" style="vertical-align: middle; margin-right: 6px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <a href="tel:+34687805580">+34 687 80 55 80</a>
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Ubicación</h3>
+                <iframe
+                    class="footer-map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.2!2d-6.0637!3d37.3447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126f0e4dd3c9e3%3A0x9a2bb8c68d3f4d8e!2sC.%20Juan%20Sebasti%C3%A1n%20Elcano%2C%2041927%20Mairena%20del%20Aljarafe%2C%20Sevilla!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Ubicación de Los Antojos de Carol en Google Maps">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Los Antojos de Carol - Ana Albi. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- WHATSAPP BUTTON -->
+    <!-- ============================================ -->
+    <a href="https://wa.me/34687805580" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contactar por WhatsApp" title="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- ============================================ -->
+    <!-- BACK TO TOP BUTTON -->
+    <!-- ============================================ -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba" title="Volver arriba">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================================ -->
+    <script>
+        // ========================================
+        // Mobile Menu Toggle
+        // ========================================
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
+        }
+
+        function closeMobileMenu() {
+            menuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close menu on resize to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+
+        // ========================================
+        // Back to Top Button
+        // ========================================
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ========================================
+        // Service Card Image Slideshow
+        // ========================================
+        function initCardSlideshows() {
+            const cards = document.querySelectorAll('.service-card');
+
+            cards.forEach(card => {
+                const images = card.querySelectorAll('img');
+                if (images.length <= 1) return;
+
+                let currentIndex = 0;
+
+                setInterval(() => {
+                    images[currentIndex].classList.remove('active');
+                    currentIndex = (currentIndex + 1) % images.length;
+                    images[currentIndex].classList.add('active');
+                }, 3000);
+            });
+        }
+
+        // ========================================
+        // Video Handling
+        // ========================================
+        function initVideo() {
+            const video = document.getElementById('heroVideo');
+            if (video) {
+                // Force muted for autoplay compatibility
+                video.muted = true;
+                video.setAttribute('muted', '');
+                video.setAttribute('playsinline', '');
+
+                // Try to play
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(() => {
+                        // Autoplay failed, try again with user interaction
+                        document.addEventListener('click', () => {
+                            video.play().catch(() => {});
+                        }, { once: true });
+                    });
+                }
+            }
+        }
+
+        // ========================================
+        // Smooth Scroll for anchor links
+        // ========================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+                closeMobileMenu();
+            });
+        });
+
+        // ========================================
+        // Intersection Observer for fade-in animations
+        // ========================================
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            document.querySelectorAll('.service-category, .instagram-section, .footer-section').forEach(el => {
+                el.classList.add('animate-target');
+                observer.observe(el);
+            });
+        }
+
+        // ========================================
+        // Initialize everything on DOM ready
+        // ========================================
+        document.addEventListener('DOMContentLoaded', () => {
+            initVideo();
+            initCardSlideshows();
+            initScrollAnimations();
+        });
+    </script>
+
+</body>
+</html>
